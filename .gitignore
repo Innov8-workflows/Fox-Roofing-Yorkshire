@@ -1,0 +1,9 @@
+# Whitelist: only the noindex staging build and its deploy workflow are published.
+# The generator, site.config.js, content/ (evidence notes), _src and _source (the client's
+# raw uploads and insurance certificate) stay on this machine.
+*
+!.gitignore
+!.github/
+!.github/**
+!_staging/
+!_staging/**
