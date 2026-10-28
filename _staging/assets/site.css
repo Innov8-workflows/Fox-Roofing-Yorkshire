@@ -380,6 +380,7 @@ a.rev-sc:hover{transform:translateY(-2px);border-color:var(--card-line-hi)}
 .area-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,4.5vw,56px);align-items:center}
 .area-lead{color:var(--on-ink-2);font-size:1.05rem;margin:16px 0 26px;max-width:46ch}
 .chips{display:flex;flex-wrap:wrap;gap:9px}
+a.chip{text-decoration:none}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);font-size:.88rem;font-weight:600;color:#fff;cursor:default;transition:.22s}
 .chip svg{width:15px;height:15px;color:var(--gold);flex:none}
 .chip.core{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
@@ -582,6 +583,7 @@ img.svc-bg{width:100%;height:100%;object-fit:cover}
 .about-split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
 .about-split img{width:100%;height:auto;border-radius:var(--r);box-shadow:0 24px 50px -30px rgba(var(--ink-rgb),.6)}
 .pg .rev-score{margin-top:0}
+.prose p.src{font-size:.82rem;color:var(--muted);margin-top:6px}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
 @media(max-width:1024px){.rev-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.rev-grid{grid-template-columns:1fr}}
