@@ -72,6 +72,14 @@
 <section class="pg"><div class="wrap"><div class="prose">
 <h2>What chimney work covers</h2>
 <ul><li>Repointing a stack where the mortar has worn away</li><li>Rebuilding the top courses of a stack that has cracked or started to lean</li><li>Renewing the flashing where the stack meets the tiles</li><li>Re-bedding loose pots and fitting caps or cowls</li></ul>
+<h2>Lead flashing renewed around a stack</h2>
+<p>One of our chimney jobs. Before, the lead around the base of the stack was old and dull, dressed flat over the concrete tiles. After, it has new stepped flashing running up the side of the stack with the brick courses. Drag the slider to compare.</p><div class="ba-slider pg-slider" style="--pos:50%">
+  <img class="ba-after" src="/Fox-Roofing-Yorkshire/assets/svc-m31.webp" alt="New stepped lead flashing around the base of the same chimney stack" loading="lazy" draggable="false" data-media-id="m31" data-media-role="pair">
+  <div class="ba-before"><img src="/Fox-Roofing-Yorkshire/assets/svc-m33.webp" alt="Old, weathered lead flashing around the base of a brick chimney stack" loading="lazy" draggable="false" data-media-id="m33" data-media-role="pair"></div>
+  <span class="ba-tag ba-tag-b">Before</span><span class="ba-tag ba-tag-a">After</span>
+  <div class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span></div>
+  <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+</div>
 <h2>Why chimneys leak</h2>
 <p>A chimney sits above the roof in every bit of weather the house gets, and it's one of the few places where two different materials meet. Water gets in through gaps in the pointing, through a cracked crown on top of the stack, or past flashing that has lifted. The leak can show up a room or two away from the stack, because water runs along the timbers before it drips.</p>
 <h2>Signs to look out for</h2>
@@ -156,6 +164,17 @@ var b=document.getElementById("burger"),m=document.getElementById("mobileMenu");
 if(b&&m){b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
 m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");b.setAttribute("aria-expanded",false)})})}
 var y=document.getElementById("yr");if(y)y.textContent=new Date().getFullYear();
-})();</script>
+})();document.querySelectorAll(".ba-slider").forEach(function(s){
+var r=s.querySelector(".ba-range"),d=false;
+function set(p){p=Math.max(0,Math.min(100,p));s.style.setProperty("--pos",p+"%");r.value=Math.round(p)}
+function fx(x){var b=s.getBoundingClientRect();set((x-b.left)/b.width*100)}
+s.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse")return;d=true;s.setPointerCapture(e.pointerId);fx(e.clientX)});
+s.addEventListener("pointermove",function(e){if(d)fx(e.clientX)});
+["pointerup","pointercancel","pointerleave"].forEach(function(t){s.addEventListener(t,function(){d=false})});
+var tx=0,ty=0,h=null;
+s.addEventListener("touchstart",function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;h=null},{passive:true});
+s.addEventListener("touchmove",function(e){var t=e.touches[0];if(h===null)h=Math.abs(t.clientX-tx)>Math.abs(t.clientY-ty);if(h){e.preventDefault();fx(t.clientX)}},{passive:false});
+r.addEventListener("input",function(){set(+r.value)});
+});</script>
 </body>
 </html>
