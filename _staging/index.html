@@ -591,10 +591,8 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
 </div>
 
 <section class="hero" id="top">
-  <div class="hero-media" id="heroMedia">
-    <div class="hero-slide on" style="background-image:url('/Fox-Roofing-Yorkshire/assets/hero1.webp')"></div>
-    <div class="hero-slide" style="background-image:url('/Fox-Roofing-Yorkshire/assets/hero2.webp')"></div>
-    <div class="hero-slide" style="background-image:url('/Fox-Roofing-Yorkshire/assets/hero3.webp')"></div>
+  <div class="hero-media" id="heroMedia" style="background-image:url('/Fox-Roofing-Yorkshire/assets/h1-poster.webp')">
+    <video class="hero-clip top" src="media/h1.mp4" style="object-position:45% 50%" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
   </div>
   <div class="hero-content">
     <div class="wrap">
@@ -825,7 +823,7 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
 </section>
 
 <section class="areas pad" id="areas">
-  <div class="areas-bg" style="background-image:url('/Fox-Roofing-Yorkshire/assets/areas.webp')" role="img" aria-label="Aerial view of a re-roof under way on a Yorkshire street"></div>
+  <div class="areas-bg" style="background-image:url('/Fox-Roofing-Yorkshire/assets/areas.webp')" role="img" aria-label="A stone slate roof with roof windows, scaffold along the eaves"></div>
   <div class="areas-scrim"></div>
   <div class="wrap area-wrap">
     <div>
@@ -862,7 +860,7 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
 .map-card-head b{font-family:var(--font-display);font-weight:700;color:#141414;font-size:14px}
 .map-card-head small{margin-left:auto;font-size:12px;color:#6b6b6b;text-align:right}
 .map-live{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(244,180,0,.22);flex:none}
-.area-map{height:250px;background:#eeeeec}
+.area-map{height:250px;background:#eeeeec;isolation:isolate}
 .area-map .leaflet-tile-pane{filter:grayscale(1) brightness(1.04) contrast(.9)}
 .area-map.leaflet-container{background:#eeeeec;font-family:var(--font-body);cursor:default}
 #areaMap .leaflet-control-attribution{background:rgba(255,255,255,.85);color:#6c6c6c;font-size:9.5px;padding:1px 7px;border-radius:6px 0 0 0;box-shadow:none}
