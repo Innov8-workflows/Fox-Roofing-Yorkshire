@@ -343,6 +343,7 @@ header.nav{position:sticky;top:0;z-index:60;background:var(--ink);border-bottom:
 a.rev-sc:hover{transform:translateY(-2px);border-color:var(--card-line-hi)}
 .rev-sc .rev-logo{width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex:none;background:center/contain no-repeat}
 .rev-sc .rev-logo svg{width:34px;height:34px}
+.rev-sc .rev-logo--star{color:var(--gold)}
 .rev-sc b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:800;line-height:1}
 .rev-sc b small{font-size:.9rem;color:var(--muted);font-weight:700}
 .rev-sc span.lbl{display:block;font-size:.76rem;color:var(--muted);margin-top:4px}
@@ -803,6 +804,7 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
     <span class="eyebrow">Reviews</span>
     <h2 class="h-sec">What Our Customers Say</h2>
     <p class="lead">In our customers' own words.</p>
+    <div class="rev-score"><div class="rev-sc"><span class="rev-logo rev-logo--star"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span><div><b>5<small>/5</small></b><span class="lbl">8 reviews on Get Work</span></div></div></div>
   </div>
   <div class="wrap">
     <div class="rev-view" id="revView"><div class="rev-track" id="revTrack"></div></div>
@@ -1246,6 +1248,14 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
 
   (function(){
     var reviews = [
+      {src:"gw", h:"Michal", w:"Professional Company", t:"They did a very good job with fixing the leaking and repointing my ridge line. They gave me a quote and started immediately after I agreed with the price."},
+      {src:"gw", h:"Philip", w:"Highly Recommended", t:"Quick response, communication was great and the price was fair. Honest and reliable lads, I was happy with job they completed and gave good advice. Will definitely use these in the future. Thank you."},
+      {src:"gw", h:"Victoria", w:"Brilliant Job", t:"Fast response time, constant updates on how the work was going throughout the day and the finished work is great."},
+      {src:"gw", h:"Margaret", w:"Tidy Workmanship", t:"Very efficient, tidy, did a good job and done on the same day they came to give a quote!"},
+      {src:"gw", h:"Jeffrey", w:"Efficient Service", t:"Job well done. Efficient and quick workers. Obliging and friendly, happy with the work."},
+      {src:"gw", h:"Melvy", w:"A Great Job Done", t:"Prompt response and good workmanship."},
+      {src:"gw", h:"Simon", w:"Very Pleased", t:"Very good service."},
+      {src:"gw", h:"Danielle", w:"5 Star Service", t:"Great job. Thanks."},
       {src:"q", h:"Fox Roofing customer", w:"Customer review", foot:"Review passed on by Fox Roofing", t:"Really pleased with the work carried out. These guys were very professional, communicated with me throughout about the job and completed it in good time. Would definitely recommend!"}
     ];
     var STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>';
@@ -1255,7 +1265,7 @@ footer h4{font-family:var(--display);font-weight:700;color:var(--brand-lt);font-
       f: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>'
 
     };
-    var FOOT = { g: "Review left on Google", f: "Recommended on Facebook" };
+    var FOOT = { g: "Review left on Google", f: "Recommended on Facebook", gw: "Review left on Get Work" };
     var track = document.getElementById("revTrack"), dotsWrap = document.getElementById("revDots");
     function esc(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
     reviews.forEach(function(r){
